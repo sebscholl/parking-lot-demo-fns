@@ -1,0 +1,1055 @@
+{
+  "tables": [
+    {
+      "id": "62d882208e7b7900096a0d99",
+      "name": "Tenants",
+      "displayName": "Tenants",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "62d882208e7b7900096a0da3",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d882208e7b7900096a0da1",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d882208e7b7900096a0d9f",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d882208e7b7900096a0d9b",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "62d88232d8e24e00097c3ede",
+          "name": "name",
+          "displayName": "Name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d885e71fad9c0009623689",
+          "name": "lots",
+          "displayName": "Lots",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "owner",
+            "refFieldDisplayName": "Owner",
+            "relationTableName": "LotTenants",
+            "relationFieldName": "tenantBId",
+            "refTable": {
+              "id": "62d8823aed57bf000933b17b",
+              "name": "Lots"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": true
+          }
+        },
+        {
+          "id": "62d88678f64feb0009231d21",
+          "name": "owner",
+          "displayName": "Owner",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "tenant",
+            "refFieldDisplayName": "Tenant",
+            "relationTableName": "TenantUser",
+            "relationFieldName": "tenantAId",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "62d8869c1f10a00009594157",
+          "name": "employees",
+          "displayName": "Employees",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "tenantEmployees",
+            "refFieldDisplayName": "TenantEmployees",
+            "relationTableName": "TenantsUser",
+            "relationFieldName": "tenantAId",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "62d8823aed57bf000933b17b",
+      "name": "Lots",
+      "displayName": "Lots",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "62d8823aed57bf000933b185",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8823aed57bf000933b183",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8823aed57bf000933b181",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8823aed57bf000933b17d",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "62d88248684a8900092d9fe7",
+          "name": "name",
+          "displayName": "name",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d8873eb20dc50009bd8fed",
+          "name": "address",
+          "displayName": "address",
+          "description": null,
+          "fieldType": "SMART",
+          "fieldTypeAttributes": {
+            "format": "ADDRESS",
+            "innerFields": [
+              {
+                "name": "country",
+                "displayName": "Country",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": true,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 255
+                }
+              },
+              {
+                "name": "street1",
+                "displayName": "Street 1",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": true,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 255
+                }
+              },
+              {
+                "name": "street2",
+                "displayName": "Street 2",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": false,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 255
+                }
+              },
+              {
+                "name": "zip",
+                "displayName": "Zip",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": true,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 25
+                }
+              },
+              {
+                "name": "city",
+                "displayName": "City",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": true,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 255
+                }
+              },
+              {
+                "name": "state",
+                "displayName": "State",
+                "description": null,
+                "fieldType": "TEXT",
+                "isList": false,
+                "isRequired": false,
+                "isUnique": false,
+                "fieldTypeAttributes": {
+                  "format": "UNFORMATTED",
+                  "fieldSize": 255
+                }
+              }
+            ]
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d8872ef64feb000924069c",
+          "name": "coordinates",
+          "displayName": "coordinates",
+          "description": null,
+          "fieldType": "GEO",
+          "fieldTypeAttributes": {
+            "format": "POINT"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d96e8a8aca390009f93f1d",
+          "name": "geoCodingMeta",
+          "displayName": "geoCodingMeta",
+          "description": null,
+          "fieldType": "JSON",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": "{}",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d887890a8eee0009752582",
+          "name": "images",
+          "displayName": "Images",
+          "description": null,
+          "fieldType": "FILE",
+          "fieldTypeAttributes": {
+            "format": "IMAGE",
+            "maxSize": null,
+            "typeRestrictions": null
+          },
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d885e71fad9c000962368c",
+          "name": "owner",
+          "displayName": "Owner",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "lots",
+            "refFieldDisplayName": "Lots",
+            "relationTableName": "LotTenants",
+            "relationFieldName": "lotAId",
+            "refTable": {
+              "id": "62d882208e7b7900096a0d99",
+              "name": "Tenants"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "62d885d1c98c5600098e6f4f",
+          "name": "parkingSpaces",
+          "displayName": "ParkingSpaces",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "lot",
+            "refFieldDisplayName": "Lot",
+            "relationTableName": "LotsParkingSpace",
+            "relationFieldName": "lotAId",
+            "refTable": {
+              "id": "62d8825ff7b6b20009fa8bc5",
+              "name": "ParkingSpaces"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "62d8825ff7b6b20009fa8bc5",
+      "name": "ParkingSpaces",
+      "displayName": "ParkingSpaces",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "62d8825ff7b6b20009fa8bcf",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8825ff7b6b20009fa8bcd",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8825ff7b6b20009fa8bcb",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8825ff7b6b20009fa8bc7",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "62d96c1d5aa09500094381b9",
+          "name": "spaceID",
+          "displayName": "spaceID",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 10
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d8828ee4ae940009d7592d",
+          "name": "floor",
+          "displayName": "floor",
+          "description": null,
+          "fieldType": "NUMBER",
+          "fieldTypeAttributes": {
+            "format": "NUMBER",
+            "precision": 0,
+            "currency": null,
+            "minValue": 0,
+            "maxValue": 100,
+            "isBigInt": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d882c7bd77b10009ba2fb1",
+          "name": "space",
+          "displayName": "space",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d883d7a339a70009f1e147",
+          "name": "isHandicap",
+          "displayName": "isHandicap",
+          "description": null,
+          "fieldType": "SWITCH",
+          "fieldTypeAttributes": {
+            "format": "TRUE_FALSE",
+            "listOptions": null
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": "false",
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d885d1c98c5600098e6f52",
+          "name": "lot",
+          "displayName": "Lot",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "parkingSpaces",
+            "refFieldDisplayName": "ParkingSpaces",
+            "relationTableName": "LotsParkingSpace",
+            "relationFieldName": "parkingSpaceBId",
+            "refTable": {
+              "id": "62d8823aed57bf000933b17b",
+              "name": "Lots"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "62d88653b20dc50009bc1f2d",
+          "name": "parkingSessions",
+          "displayName": "ParkingSessions",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "parkingSpace",
+            "refFieldDisplayName": "ParkingSpace",
+            "relationTableName": "ParkingSessionParkingSpaces",
+            "relationFieldName": "parkingSpaceBId",
+            "refTable": {
+              "id": "62d885ebc98c5600098eb28b",
+              "name": "ParkingSessions"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "62d885ebc98c5600098eb28b",
+      "name": "ParkingSessions",
+      "displayName": "ParkingSessions",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "62d885ebc98c5600098eb295",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d885ebc98c5600098eb293",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d885ebc98c5600098eb291",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d885ebc98c5600098eb28d",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "62d8860388fd3400092ce600",
+          "name": "startTime",
+          "displayName": "startTime",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d8860d38795700095de90f",
+          "name": "endTime",
+          "displayName": "endTime",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d8879ed8e24e00097fcc61",
+          "name": "image",
+          "displayName": "Image",
+          "description": null,
+          "fieldType": "FILE",
+          "fieldTypeAttributes": {
+            "format": "FILE",
+            "maxSize": null,
+            "typeRestrictions": null
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d886e8af8eca00097c6f86",
+          "name": "vehicle",
+          "displayName": "Vehicle",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "parkingSessions",
+            "refFieldDisplayName": "ParkingSessions",
+            "relationTableName": "ParkingSessionVehicles",
+            "relationFieldName": "parkingSessionAId",
+            "refTable": {
+              "id": "62d8865772b14d0009614acb",
+              "name": "Vehicles"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        },
+        {
+          "id": "62d88653b20dc50009bc1f2a",
+          "name": "parkingSpace",
+          "displayName": "ParkingSpace",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "parkingSessions",
+            "refFieldDisplayName": "ParkingSessions",
+            "relationTableName": "ParkingSessionParkingSpaces",
+            "relationFieldName": "parkingSessionAId",
+            "refTable": {
+              "id": "62d8825ff7b6b20009fa8bc5",
+              "name": "ParkingSpaces"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "62d8865772b14d0009614acb",
+      "name": "Vehicles",
+      "displayName": "Vehicles",
+      "isSystem": false,
+      "fields": [
+        {
+          "id": "62d8865772b14d0009614ad5",
+          "name": "id",
+          "displayName": "ID",
+          "description": null,
+          "fieldType": "ID",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": true,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8865772b14d0009614ad3",
+          "name": "createdAt",
+          "displayName": "Created At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8865772b14d0009614ad1",
+          "name": "updatedAt",
+          "displayName": "Updated At",
+          "description": null,
+          "fieldType": "DATE",
+          "fieldTypeAttributes": {
+            "format": "DATETIME"
+          },
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": null
+        },
+        {
+          "id": "62d8865772b14d0009614acd",
+          "name": "createdBy",
+          "displayName": "Created By",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": false,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": true,
+          "isMeta": true,
+          "relation": {
+            "refFieldName": null,
+            "refFieldDisplayName": null,
+            "relationTableName": null,
+            "relationFieldName": "createdById",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": null,
+            "refFieldIsRequired": null
+          }
+        },
+        {
+          "id": "62d886b1d9a33700090ba38b",
+          "name": "nickname",
+          "displayName": "nickname",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d886c5fb1eff0009f25a40",
+          "name": "licensePlate",
+          "displayName": "licensePlate",
+          "description": null,
+          "fieldType": "TEXT",
+          "fieldTypeAttributes": {
+            "format": "UNFORMATTED",
+            "fieldSize": 100
+          },
+          "isList": false,
+          "isRequired": true,
+          "isUnique": false,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": null
+        },
+        {
+          "id": "62d886e8af8eca00097c6f89",
+          "name": "parkingSessions",
+          "displayName": "ParkingSessions",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": true,
+          "isRequired": false,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "vehicle",
+            "refFieldDisplayName": "Vehicle",
+            "relationTableName": "ParkingSessionVehicles",
+            "relationFieldName": "vehicleBId",
+            "refTable": {
+              "id": "62d885ebc98c5600098eb28b",
+              "name": "ParkingSessions"
+            },
+            "refFieldIsList": false,
+            "refFieldIsRequired": true
+          }
+        },
+        {
+          "id": "62d887029b283f0009860684",
+          "name": "customer",
+          "displayName": "Customer",
+          "description": null,
+          "fieldType": "RELATION",
+          "fieldTypeAttributes": null,
+          "isList": false,
+          "isRequired": true,
+          "isUnique": null,
+          "defaultValue": null,
+          "isSystem": false,
+          "isMeta": false,
+          "relation": {
+            "refFieldName": "vehicles",
+            "refFieldDisplayName": "Vehicles",
+            "relationTableName": "UsersVehicle",
+            "relationFieldName": "vehicleBId",
+            "refTable": {
+              "id": "62d880ba78678500093fac63",
+              "name": "Users"
+            },
+            "refFieldIsList": true,
+            "refFieldIsRequired": false
+          }
+        }
+      ]
+    }
+  ],
+  "version": "0.0.111"
+}

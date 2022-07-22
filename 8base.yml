@@ -1,0 +1,12 @@
+functions:
+  afterLotCreate:
+    type: trigger.after
+    handler:
+      code: src/triggers/afterLotCreate/handler.js
+    operation: Lot.create
+  seedDatabase:
+    type: task
+    handler:
+      code: src/tasks/seedDatabase/handler.js
+settings:
+  timeout: 120

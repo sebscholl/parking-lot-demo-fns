@@ -1,0 +1,91 @@
+{
+  "data": {
+    "tenant": {
+      "name": "Seb's Parking Co.",
+      "owner": {
+        "create": {
+          "firstName": "Sebastian",
+          "lastName": "Scholl",
+          "email": "sebscholl@gmail.com",
+          "status": "active"
+        }
+      },
+      "lots": {
+        "create": [
+          {
+            "name": "Main Complex",
+            "address": {
+              "country": "USA",
+              "street1": "1515 West Avenue",
+              "state": "Florida",
+              "city": "Miami Beach",
+              "zip": "33139"
+            }
+          },
+          {
+            "name": "24-Hour Parking",
+            "address": {
+              "country": "USA",
+              "street1": "800 West Avenue",
+              "state": "Florida",
+              "city": "Miami Beach",
+              "zip": "33139"
+            }
+          }
+        ]
+      }
+    },
+    "parkingSpaces": [
+      { 
+        "space": "A", 
+        "floor": 1, 
+        "isHandicap": false
+      },
+      { 
+        "space": "B", 
+        "floor": 1, 
+        "isHandicap": false
+      },
+      { 
+        "space": "C", 
+        "floor": 1, 
+        "isHandicap": false
+      },
+      { 
+        "space": "D", 
+        "floor": 1, 
+        "isHandicap": false
+      },
+      { 
+        "space": "E", 
+        "floor": 1, 
+        "isHandicap": true
+      },
+      { 
+        "space": "A", 
+        "floor": 2, 
+        "isHandicap": false
+      },
+      { 
+        "space": "B", 
+        "floor": 2, 
+        "isHandicap": false
+      },
+      { 
+        "space": "C", 
+        "floor": 2, 
+        "isHandicap": false
+      },
+      { 
+        "space": "D", 
+        "floor": 2, 
+        "isHandicap": false
+      },
+      { 
+        "space": "E", 
+        "floor": 2, 
+        "isHandicap": true
+      }
+    ]
+  }
+}

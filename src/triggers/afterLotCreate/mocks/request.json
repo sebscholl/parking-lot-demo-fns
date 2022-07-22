@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": "cl5vg30gb057109l6ho3m1qyn",
+    "name": "Big LOT",
+    "address": {
+      "country": "USA",
+      "street1": "1515 West Avenue",
+      "state": "Florida",
+      "city": "Miami",
+      "zip": "33139"
+    }
+  },
+  "headers": {
+    "x-header-1": "header value"
+  },
+  "body": "{\"foo\":\"bar\"}"
+}
